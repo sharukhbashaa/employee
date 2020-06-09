@@ -1,0 +1,168 @@
+
+<!--       navbar starts here-->
+
+<div class="container-fluid">
+  <nav class="navbar navbar-expand-lg bg-primary">
+    <a class="navbar-brand text-white" routerLink="/">Navbar</a>
+    <div class="ml-auto">
+      <div>
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item ">
+            <a class="nav-link text-white" href="#" data-toggle="modal" data-target="#exampleModal">New Case</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-white" href="#" data-toggle="modal" data-target="#exampleModal2">Start Process</a>
+          </li>
+          <li class="nav-item dropdown dropleft float-right  ">
+            <a class="nav-link  text-white dropdown-toggle dropleft float-right" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              My profile
+            </a>
+           <div class="dropdown-menu  border-0 " aria-labelledby="navbarDropdown">
+              <table class=" table table-bordered table-hover table-striped  ">
+                <tr>
+                  <th class="bg-light">id</th>
+                  <td>demo</td>
+                </tr>
+                <tr>
+                  <th class="bg-light">firstname</th>
+                  <td>demo</td>
+                </tr>
+                 <tr>
+                   <th class="bg-light">Lastname</th>
+                   <td>demo</td>
+                 </tr>
+                <tr>
+                    <th class="bg-light">email</th>
+                  <td>demo@gmail.com</td>
+                </tr>
+              </table>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+
+<!--sidenav starts here-->
+
+  <div class="container-fluid">
+    <div class="row">
+
+      <div class="col-md-2 mt-3">
+<!--        <div class="row">-->
+<!--          <div class="">-->
+            <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+              <a class="nav-link " data-toggle="pill" href="#v-pills-home" role="tab" aria-controls="v-pills-all-tasks" aria-selected="true">All Tasks</a>
+              <a class="nav-link"  data-toggle="pill" routerLink="/mytasks" role="tab" aria-controls="v-pills-profile" aria-selected="false">My Tasks</a>
+              <a class="nav-link"  data-toggle="pill" href="#v-pills-mygrouptasks" role="tab" aria-controls="v-pills-messages" aria-selected="false">My Group Tasks</a>
+              <a class="nav-link"  data-toggle="pill" href="#v-pills-findacase" role="tab" aria-controls="v-pills-settings" aria-selected="false">Find a Case</a>
+              <a class="nav-link"  data-toggle="pill" href="#v-historicalcases" role="tab" aria-controls="v-pills-settings" aria-selected="false">Historical Cases</a>
+              <a class="nav-link"  data-toggle="pill" href="#v-pills-activecases" role="tab" aria-controls="v-pills-settings" aria-selected="false">Active Cases</a>
+              <a class="nav-link"  data-toggle="pill" href="#v-dashboard" role="tab" aria-controls="v-pills-settings" aria-selected="false">My Dashboard</a>
+<!--            </div>-->
+          </div>
+<!--        </div>-->
+      </div>
+
+<!--      nav tabs start here-->
+
+      <div class="col-md-10 mt-3">
+        <div class="column">
+<!--          <div>-->
+            <ul class="nav nav-tabs nav-pills" id="myTab" role="tablist">
+              <li class="nav-item">
+                <a class="nav-link " id="home-tab" data-toggle="tab" routerLink="/taskview" role="tab" aria-controls="home"
+                   aria-selected="true">Task View</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" id="profile-tab" data-toggle="tab" routerLink="/caseinfo" role="tab" aria-controls="profile"
+                   aria-selected="false">case info</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" id="contact-tab" data-toggle="tab" routerLink="/attachments" role="tab" aria-controls="contact"
+                   aria-selected="false">Attachment</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" id="contacts-tab" data-toggle="tab" routerLink="/audittrail" role="tab" aria-controls="audittrail"
+                   aria-selected="false">Audit Trail</a>
+              </li>
+            </ul>
+<!--          </div>-->
+
+          <div class="row">
+            <div class="col-md-10" style="margin-top: 2em">
+
+              <router-outlet></router-outlet>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!--modal for new case-->
+
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Create Task</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form>
+          <div class="form-group">
+            <label for="candidate-name" class="col-form-label">Candidate Name:</label>
+            <input type="text" class="form-control" id="candidate-name">
+          </div>
+          <div class="form-group">
+            <label for="candidate-info" class="col-form-label">Candidate Info:</label>
+            <input type="text" class="form-control" id="candidate-info">
+          </div>
+          <div class="form-group">
+            <label for="candidate-id" class="col-form-label">Candidate ID:</label>
+            <input type="text" class="form-control" id="candidate-id">
+          </div>
+          <div class="form-group">
+            <label for="message-text" class="col-form-label">Job Description:</label>
+            <textarea class="form-control" id="message-text"></textarea>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" data-dismiss="modal">Add Task</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!--modal for start process-->
+
+<div class="modal fade" id="exampleModal2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <div class="row">
+          <div class="input-group flex-nowrap">
+            <h4 class="font-italic">Start Process</h4>
+            <input type="text" class="form-control col-sm-8 ml-3" placeholder="Username" aria-label="Username" aria-describedby="addon-wrapping" >
+          </div>
+        </div>
+      </div>
+      <div class="modal-body font-italic">
+        Click on the process to start
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+</div>
+
+
